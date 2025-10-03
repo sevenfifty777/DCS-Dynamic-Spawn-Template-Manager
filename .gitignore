@@ -1,0 +1,33 @@
+# DCS Mission Files (large binary files)
+*.miz
+
+# Windows executable (will be in releases)
+*.exe
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+build/
+dist/
+*.pyc
+__pycache__/
