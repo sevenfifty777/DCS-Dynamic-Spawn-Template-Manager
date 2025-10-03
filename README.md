@@ -97,7 +97,7 @@ The program works in **2 steps**. First, you'll configure which airbases can spa
 
 ### Step 4: Link Aircraft Templates (STEP 2)
 
-Now you'll choose which aircraft types can will be used as a Dynamioc Template at each airbase:
+Now you'll choose which aircraft types can will be used as a Dynamic Template at each airbase:
 
 1. The program will reload and show available aircraft templates
 2. **For each airbase and aircraft type**:
