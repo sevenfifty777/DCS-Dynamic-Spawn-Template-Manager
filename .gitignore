@@ -29,5 +29,6 @@ desktop.ini
 # Build artifacts
 build/
 dist/
+Release/
 *.pyc
 __pycache__/
