@@ -8,7 +8,7 @@
 ### Aircraft Group Naming Requirements
 
 1. **Open your mission** in DCS Mission Editor
-2. **Create aircraft groups** with skill set to **"Player"** and check **DynamicTemplate** option
+2. **Create aircraft groups** with skill set to **"Player"** and check **"DynamicTemplate"** option
 3. **Rename these groups** to end with `_DynTemp`
    - ✅ Good examples: 
      - `F-16C_Squadron_DynTemp`
