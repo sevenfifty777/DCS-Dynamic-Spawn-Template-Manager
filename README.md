@@ -26,7 +26,7 @@
 
 ## 📋 What This Tool Does
 
-This tool helps you set up **dynamic aircraft spawning** in your DCS World missions. Instead of having static aircraft that are always the same, you can have aircraft that spawn dynamically during the mission, making each playthrough different and more exciting.
+This tool helps you set up **dynamic aircraft spawning** in your DCS World missions. You will be able to configure each airbase with all different option and assign Dynamic Template for aircraft
 
 ## 📦 What You Need
 
@@ -72,10 +72,10 @@ If you don't have the CSV file yet, you can generate it yourself:
 
 ### Step 3: Configure Dynamic Spawning (STEP 1)
 
-The program works in **2 steps**. First, you'll configure which airbases can spawn aircraft:
+The program works in **2 steps**. First, you'll configure which airbases can spawn aircraft with all Dynamic spawn option:
 
 1. **Click "📁 Load Airbases CSV"**
-   - Select your CSV file (e.g., `AirbasesList_Caucasus.csv`)
+   - Select your CSV file corresponding to the mission map (e.g., `AirbasesList_Caucasus.csv`)
 
 2. **Click "📦 Load MIZ File"**
    - Select your `.miz` mission file
@@ -106,6 +106,8 @@ Now you'll choose which aircraft types can will be used as a Dynamioc Template a
 
 3. **Click "Apply Templates & Save Final"**
    - This creates your final mission: `[YourMission]_Final.miz`
+
+### **Notes:** If you stop the process before generationg the final mission, clean all temp folders and files created if any
 
 ### Step 5: Use Your Mission
 
@@ -162,7 +164,7 @@ Your Folder/
 ├── DynamicSpawnTemplateManager.exe    (The program)
 ├── aircraft_inventory.lua             (Required data)
 ├── YourMission.miz                    (Original mission)
-├── YourMission_Step1_Options.miz      (After Step 1 - can be deleted)
+├── YourMission_Step1_Options.miz      (After Step 1 - can be deleted if not done automatically)
 └── YourMission_Final.miz              (Final mission - use this one!)
 ```
 
@@ -170,9 +172,10 @@ Your Folder/
 
 1. **Start simple**: Try with just 2-3 airbases first to learn how it works
 2. **Backup originals**: Keep a copy of your original `.miz` file
-3. **Test in DCS**: Always test your final mission in DCS World before sharing
+3. **Test in DCS**: Always test your final mission in DCS World
 4. **Naming matters**: Aircraft groups must end with `_DynTemp` in the Mission Editor
 5. **One aircraft type per template**: Each template should contain only one type of aircraft
+6. **One Template per aircraft per base**: multiple template can be created for same aircraft but only one assign to each airbase
 
 ## 📞 Need Help?
 
@@ -180,10 +183,8 @@ If you're still having trouble:
 
 1. **Check your aircraft naming**: Groups must end with `_DynTemp`
 2. **Try a different mission**: Some missions may have complex structures
-3. **Start fresh**: Close the program and start over with Step 1
+3. **Start fresh**: Close the program, clean all temp files and folder that could have been created, delete previous final version if you want to start over and start over with Step 1
 
 ---
 
-**Happy flying! ✈️**
-
-*This tool makes your DCS missions more dynamic and replayable by enabling random aircraft spawning.*
+**A la chasse!!!**
