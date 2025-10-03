@@ -1,5 +1,5 @@
 # DCS Mission Files (large binary files)
-*.miz
+
 
 # Windows executable (will be in releases)
 *.exe
