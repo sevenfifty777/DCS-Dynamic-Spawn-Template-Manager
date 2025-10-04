@@ -9,12 +9,14 @@ local function CsvEscape(s)
 end
 -- Get map (theater) name using MOOSE, MIST, or fallback
 local mapName = "UnknownMap"
+--[[
 if mist and mist.DBs and mist.DBs.missionData and mist.DBs.missionData.theatre then
     mapName = mist.DBs.missionData.theatre
 elseif UTILS and UTILS.GetDCSMap then
     mapName = UTILS.GetDCSMap()
 end
-
+--]]
+mapName = UTILS.GetDCSMap()
 
 local function WriteAirbaseCsv()
   local filename = lfs.writedir() .. "/Logs/AirbasesList_" .. mapName .. ".csv"
