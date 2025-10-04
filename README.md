@@ -67,7 +67,7 @@ This repository includes pre-generated airbase CSV files for the following DCS m
 
 If you need a CSV file for a map not listed above, you can generate it yourself:
 
-1. **Create a new empty mission** in DCS Mission Editor with your desired map except if you want to add SHIP/FARP from use the mission you want to update
+1. **Create a new empty mission** in DCS Mission Editor with your desired map except if you want to add SHIP/FARP use the mission you want to update
 2. **Add triggers**:
    - Create a new trigger with **MISSIONSTART** event
    - Add action: **DO SCRIPT FILE** → Select `moose.lua` file
