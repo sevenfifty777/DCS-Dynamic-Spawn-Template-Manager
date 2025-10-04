@@ -229,8 +229,7 @@ Your Folder/
 2. **Backup originals**: Keep a copy of your original `.miz` file
 3. **Test in DCS**: Always test your final mission in DCS World
 4. **Naming matters**: Aircraft groups must end with `_DynTemp` in the Mission Editor
-5. **One aircraft type per template**: Each template should contain only one type of aircraft
-6. **One Template per aircraft per base**: multiple template can be created for same aircraft but only one assign to each airbase
+5. **One Template per aircraft per base**: multiple template can be created for same aircraft but only one assign to each airbase
 
 ## 📞 Need Help?
 
