@@ -7,6 +7,7 @@
 > 
 > **ALWAYS KEEP A BACKUP COPY OF YOUR ORIGINAL MISSION FILE!**
 > 
+> New miz file should be created from your original mission **BUT**
 > This tool will **overwrite all existing airbase settings** in your mission. Any previous airbase configurations, coalition assignments, or spawn settings will be **permanently lost** if you don't have a backup.
 > 
 > **Before proceeding:**
