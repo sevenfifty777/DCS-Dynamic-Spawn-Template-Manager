@@ -38,9 +38,28 @@ This tool helps you set up **dynamic aircraft spawning** in your DCS World missi
    - A `.miz` mission file you want to modify
    - A CSV file with airbase information (usually named something like `AirbasesList_[MapName].csv`)
 
-## � How to Generate the Airbase CSV File
+## 🗺️ Available Maps with Pre-generated CSV Files
 
-If you don't have the CSV file yet, you can generate it yourself:
+This repository includes pre-generated airbase CSV files for the following DCS maps:
+
+| Map Name | CSV File | Location |
+|----------|----------|----------|
+| **Afghanistan** | `AirbasesList_Afghanistan.csv` | `Airbases List Files/` |
+| **Caucasus** | `AirbasesList_Caucasus.csv` | `Airbases List Files/` |
+| **Iraq** | `AirbasesList_Iraq.csv` | `Airbases List Files/` |
+| **Mariana Islands** | `AirbasesList_MarianaIslands.csv` | `Airbases List Files/` |
+| **Mariana Islands WWII** | `AirbasesList_MarianaIslandsWWII.csv` | `Airbases List Files/` |
+| **Nevada** | `AirbasesList_Nevada.csv` | `Airbases List Files/` |
+| **Normandy** | `AirbasesList_Normandy.csv` | `Airbases List Files/` |
+| **Persian Gulf** | `AirbasesList_PersianGulf.csv` | `Airbases List Files/` |
+| **Sinai** | `AirbasesList_SinaiMap.csv` | `Airbases List Files/` |
+| **Syria** | `AirbasesList_Syria.csv` | `Airbases List Files/` |
+
+**You can use these CSV files directly** - no need to generate them yourself! Simply select the appropriate CSV file for your map when using the tool.
+
+## � How to Generate the Airbase CSV File (For Other Maps) or after MAP updates
+
+If you need a CSV file for a map not listed above, you can generate it yourself:
 
 1. **Create a new empty mission** in DCS Mission Editor with your desired map
 2. **Add triggers**:
