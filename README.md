@@ -1,4 +1,4 @@
-# DCS Dynamic Template Manager
+# DCS Dynamic Spawn and Template Manager
 **Note**: You need the `moose.lua` and `airbases_map.lua` files (should be included with this tool) for the CSV generation to work.
 
 ## ⚠️ Prerequisites Before Using the Tool
