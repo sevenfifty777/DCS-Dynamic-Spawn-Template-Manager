@@ -43,6 +43,12 @@
 
 This tool helps you set up **dynamic aircraft spawning** in your DCS World missions. You will be able to configure each airbase with all different option and assign Dynamic Template for aircraft
 
+### Tool Interface Preview
+
+<img src="GUI.png" alt="DCS Dynamic Template Manager GUI" width="800"/>
+
+*The tool features a modern dark interface with two-step configuration process*
+
 ## 📦 What You Need
 
 1. **The executable files** (you should have received these):
