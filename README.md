@@ -152,7 +152,7 @@ Now you'll choose which aircraft types can will be used as a Dynamic Template at
 4. **Click "Apply Templates & Save Final"**
    - This creates your final mission: `[YourMission]_Final.miz`
 
-### **Notes:** If you stop the process before generationg the final mission, clean all temp folders and files created if any
+### **Notes:** If you stop the process before generationg the final mission, clean all temp folders and files created if any, before any retry
 
 ### Step 5: Use Your Mission
 
