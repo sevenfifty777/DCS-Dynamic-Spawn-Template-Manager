@@ -3,6 +3,19 @@
 
 ## ⚠️ Prerequisites Before Using the Tool
 
+> **⚠️ CRITICAL WARNING:**
+> 
+> **ALWAYS KEEP A BACKUP COPY OF YOUR ORIGINAL MISSION FILE!**
+> 
+> This tool will **overwrite all existing airbase settings** in your mission. Any previous airbase configurations, coalition assignments, or spawn settings will be **permanently lost** if you don't have a backup.
+> 
+> **Before proceeding:**
+> 1. Make a copy of your original `.miz` file
+> 2. Store it in a safe location
+> 3. Never work directly on your only copy
+> 
+> If something goes wrong, you can always restart from your backup copy.
+
 **IMPORTANT**: Before using this tool, you must prepare your mission properly:
 
 ### Aircraft Group Naming Requirements
