@@ -4,9 +4,21 @@ import shutil
 import os
 import sys
 import csv
+import webbrowser
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
+try:
+    from PIL import Image, ImageTk
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
+    print("Warning: PIL (Pillow) not available. Buttons will use text only.")
+try:
+    from PIL import Image, ImageTk
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
 
 print("="*60)
 print("DCS Dynamic Template & Warehouse Manager")
@@ -54,8 +66,14 @@ class MergedDynamicTemplateManager:
         # Configure root window with modern styling
         self.root.configure(bg=self.colors['bg'])
         
+        # Load button images
+        self.load_button_images()
+        
         # Configure modern ttk styles
         self.setup_styles()
+        
+        # Load button images
+        self.load_button_images()
         
         # Store data
         self.templates = []
@@ -76,6 +94,47 @@ class MergedDynamicTemplateManager:
         
         # Create GUI elements
         self.create_widgets()
+    
+    def load_button_images(self):
+        """Load and resize images for buttons"""
+        self.github_image = None
+        self.discord_image = None
+        
+        if not PIL_AVAILABLE:
+            print("PIL/Pillow not available - buttons will use text only")
+            return
+        
+        try:
+            # Determine script directory (handle both script and executable)
+            if getattr(sys, 'frozen', False):
+                script_dir = os.path.dirname(sys.executable)
+            else:
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+            
+            # Load and resize GitHub image
+            github_path = os.path.join(script_dir, 'github-mark.png')
+            if os.path.exists(github_path):
+                github_img = Image.open(github_path)
+                github_img = github_img.resize((16, 16), Image.Resampling.LANCZOS)
+                self.github_image = ImageTk.PhotoImage(github_img)
+                print(f"Loaded GitHub icon: {github_path}")
+            else:
+                print(f"GitHub icon not found: {github_path}")
+            
+            # Load and resize Discord image
+            discord_path = os.path.join(script_dir, 'Discord-Symbol-Blurple.png')
+            if os.path.exists(discord_path):
+                discord_img = Image.open(discord_path)
+                discord_img = discord_img.resize((16, 16), Image.Resampling.LANCZOS)
+                self.discord_image = ImageTk.PhotoImage(discord_img)
+                print(f"Loaded Discord icon: {discord_path}")
+            else:
+                print(f"Discord icon not found: {discord_path}")
+                
+        except Exception as e:
+            print(f"Error loading button images: {e}")
+            self.github_image = None
+            self.discord_image = None
     
     def setup_styles(self):
         """Configure modern ttk styles"""
@@ -162,6 +221,85 @@ class MergedDynamicTemplateManager:
         style.configure('Modern.TSeparator',
                        background=self.colors['border'])
         
+        # Configure help buttons with softer colors and smaller size
+        style.configure('Help.TButton',
+                       background='#4A5568',  # Soft gray-blue
+                       foreground='#E2E8F0',  # Light gray text
+                       borderwidth=1,
+                       focuscolor='none',
+                       font=('Segoe UI', 8),  # Smaller font
+                       padding=(8, 4))       # Smaller padding
+        
+        style.map('Help.TButton',
+                 background=[('active', '#5A6B7D'),    # Slightly lighter on hover
+                            ('pressed', '#3A4855')],   # Darker when pressed
+                 foreground=[('active', '#F7FAFC'),    # Brighter text on hover
+                            ('pressed', '#CBD5E0')])
+    
+    def load_button_images(self):
+        """Load and resize button images"""
+        self.github_image = None
+        self.discord_image = None
+        
+        if not PIL_AVAILABLE:
+            return
+        
+        # Get script directory for both script and executable modes
+        if getattr(sys, 'frozen', False):
+            # Running as compiled executable - use temporary extraction directory
+            script_dir = sys._MEIPASS
+        else:
+            # Running as script
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # Try to load GitHub logo
+        if getattr(sys, 'frozen', False):
+            # In executable, images are in root directory
+            github_paths = [os.path.join(script_dir, "github-mark.png")]
+        else:
+            # In script mode, try multiple paths
+            github_paths = [
+                os.path.join(script_dir, "github-mark", "github-mark", "github-mark.png"),
+                os.path.join(script_dir, "github-mark", "github-mark.png"),
+                os.path.join(script_dir, "github-mark.png")
+            ]
+        
+        for github_path in github_paths:
+            if os.path.exists(github_path):
+                try:
+                    github_img = Image.open(github_path)
+                    # Resize to fit button (24x24 pixels)
+                    github_img = github_img.resize((20, 20), Image.Resampling.LANCZOS)
+                    self.github_image = ImageTk.PhotoImage(github_img)
+                    print(f"DEBUG: Loaded GitHub icon from {github_path}")
+                    break
+                except Exception as e:
+                    print(f"DEBUG: Failed to load GitHub icon from {github_path}: {e}")
+        
+        # Try to load Discord logo  
+        if getattr(sys, 'frozen', False):
+            # In executable, images are in root directory
+            discord_paths = [os.path.join(script_dir, "Discord-Symbol-Blurple.png")]
+        else:
+            # In script mode, try multiple paths
+            discord_paths = [
+                os.path.join(script_dir, "Discord-Logo", "Discord-Logo", "Symbol_RGB", "Discord-Symbol-Blurple.png"),
+                os.path.join(script_dir, "Discord-Logo", "Discord-Symbol-Blurple.png"),
+                os.path.join(script_dir, "Discord-Symbol-Blurple.png")
+            ]
+        
+        for discord_path in discord_paths:
+            if os.path.exists(discord_path):
+                try:
+                    discord_img = Image.open(discord_path)
+                    # Resize to fit button (24x24 pixels)
+                    discord_img = discord_img.resize((20, 20), Image.Resampling.LANCZOS)
+                    self.discord_image = ImageTk.PhotoImage(discord_img)
+                    print(f"DEBUG: Loaded Discord icon from {discord_path}")
+                    break
+                except Exception as e:
+                    print(f"DEBUG: Failed to load Discord icon from {discord_path}: {e}")
+        
     def load_airports(self):
         """Load airports data from selected CSV file"""
         csv_path = filedialog.askopenfilename(
@@ -238,9 +376,28 @@ class MergedDynamicTemplateManager:
                                    command=self.apply_step1, state="disabled",
                                    style="Accent.TButton")
         
+        # Help buttons with images - softer colors and smaller size
+        if self.github_image:
+            self.github_btn = ttk.Button(inner_btn_frame, text=" GitHub", 
+                                        image=self.github_image, compound="left",
+                                        command=self.open_github, style='Help.TButton')
+        else:
+            self.github_btn = ttk.Button(inner_btn_frame, text="📖 GitHub", 
+                                        command=self.open_github, style='Help.TButton')
+        
+        if self.discord_image:
+            self.discord_btn = ttk.Button(inner_btn_frame, text=" Discord", 
+                                         image=self.discord_image, compound="left",
+                                         command=self.open_discord, style='Help.TButton')
+        else:
+            self.discord_btn = ttk.Button(inner_btn_frame, text="💬 Discord", 
+                                         command=self.open_discord, style='Help.TButton')
+        
         # Pack buttons
         self.csv_btn.pack(side=tk.LEFT, padx=(0, 8))
         self.miz_btn.pack(side=tk.LEFT, padx=(0, 8))
+        self.github_btn.pack(side=tk.RIGHT, padx=(8, 4))
+        self.discord_btn.pack(side=tk.RIGHT, padx=(4, 8))
         self.apply_btn.pack(side=tk.RIGHT)
         
         # Status label with modern styling
@@ -541,13 +698,34 @@ class MergedDynamicTemplateManager:
         # StringVar will hold template groupId or "None" for disabled
         self.airbase_template_vars = {}
         
+        # Store unlimited checkbox vars: {airport_id: {aircraft_type: BooleanVar}}
+        self.airbase_unlimited_vars = {}
+        
+        # Store initial amount vars: {airport_id: {aircraft_type: StringVar}}
+        self.airbase_initial_amount_vars = {}
+        
+        # Master controls for "Select All" functionality per aircraft type
+        self.master_unlimited_vars = {}  # {aircraft_type: BooleanVar}
+        self.master_amount_vars = {}     # {aircraft_type: StringVar}
+        
+        for aircraft_type in templates_by_type.keys():
+            self.master_unlimited_vars[aircraft_type] = tk.BooleanVar(value=True)
+            self.master_amount_vars[aircraft_type] = tk.StringVar(value="100")
+        
         # Initialize vars for all airbases and aircraft types
         for airport_id in airports_with_dynspawn:
             self.airbase_template_vars[airport_id] = {}
+            self.airbase_unlimited_vars[airport_id] = {}
+            self.airbase_initial_amount_vars[airport_id] = {}
+            
             for aircraft_type, templates_list in templates_by_type.items():
                 # Default: Select first template for this aircraft type
                 default_value = str(templates_list[0]["groupId"])
                 self.airbase_template_vars[airport_id][aircraft_type] = tk.StringVar(value=default_value)
+                
+                # Default: unlimited = True, initialAmount = 100
+                self.airbase_unlimited_vars[airport_id][aircraft_type] = tk.BooleanVar(value=True)
+                self.airbase_initial_amount_vars[airport_id][aircraft_type] = tk.StringVar(value="100")
         
         # Get airport names
         airport_names_dict = {a["id"]: a["name"] for a in self.airports}
@@ -561,11 +739,18 @@ class MergedDynamicTemplateManager:
         header.pack(pady=(0, 10), anchor="w")
         
         subtitle = tk.Label(self.template_frame,
-                 text="For each airbase and aircraft type, select which template to use (or None to disable).",
+                 text="For each airbase and aircraft type, select template, unlimited flag, and initial amount.",
                  font=("Segoe UI", 9, "italic"),
                  bg=self.colors['card_bg'],
                  fg=self.colors['secondary_text'])
-        subtitle.pack(pady=(0, 15), anchor="w")
+        subtitle.pack(pady=(0, 5), anchor="w")
+        
+        help_text = tk.Label(self.template_frame,
+                 text="• Template: Which aircraft template to spawn  • ∞: Unlimited aircraft (checked=true)  • Amount: Starting aircraft count",
+                 font=("Segoe UI", 8),
+                 bg=self.colors['card_bg'],
+                 fg=self.colors['secondary_text'])
+        help_text.pack(pady=(0, 15), anchor="w")
         
         # Create scrollable container for the table (both horizontal and vertical)
         # Create outer frame with both scrollbars - make it expand to fill space
@@ -604,18 +789,100 @@ class MergedDynamicTemplateManager:
         header_label.grid(row=0, column=0, sticky="w", padx=5, pady=(0, 5))
         
         # Add column header for each aircraft type (sorted alphabetically)
+        # Each aircraft type now has 3 columns: Template, Unlimited, Initial Amount
         sorted_aircraft_types = sorted(templates_by_type.keys())
-        for idx, aircraft_type in enumerate(sorted_aircraft_types):
-            # Show aircraft type as column header
+        col_idx = 1
+        for aircraft_type in sorted_aircraft_types:
+            # Aircraft type main header (spans 3 columns)
             type_label = tk.Label(scrollable_frame, text=aircraft_type, 
                      font=("Segoe UI", 9, "bold"), 
                      bg=self.colors['card_bg'],
                      fg=self.colors['fg'],
-                     width=18,
                      anchor="center")
-            type_label.grid(row=0, column=idx+1, sticky="w", padx=3, pady=(0, 5))
+            type_label.grid(row=0, column=col_idx, columnspan=3, sticky="ew", padx=1, pady=(0, 2))
+            
+            # Sub-headers for Template, Unlimited, Initial Amount
+            template_header = tk.Label(scrollable_frame, text="Template", 
+                     font=("Segoe UI", 8, "bold"), 
+                     bg=self.colors['card_bg'],
+                     fg=self.colors['secondary_text'],
+                     width=18, anchor="center")
+            template_header.grid(row=1, column=col_idx, sticky="w", padx=2, pady=(0, 3))
+            
+            unlimited_header = tk.Label(scrollable_frame, text="∞", 
+                     font=("Segoe UI", 8, "bold"), 
+                     bg=self.colors['card_bg'],
+                     fg=self.colors['secondary_text'],
+                     width=3, anchor="center")
+            unlimited_header.grid(row=1, column=col_idx+1, sticky="w", padx=2, pady=(0, 3))
+            
+            amount_header = tk.Label(scrollable_frame, text="Amount", 
+                     font=("Segoe UI", 8, "bold"), 
+                     bg=self.colors['card_bg'],
+                     fg=self.colors['secondary_text'],
+                     width=6, anchor="center")
+            amount_header.grid(row=1, column=col_idx+2, sticky="w", padx=2, pady=(0, 3))
+            
+            col_idx += 3
         
-        ttk.Separator(scrollable_frame, orient='horizontal').grid(row=1, column=0, columnspan=len(sorted_aircraft_types)+1, sticky="ew", pady=2)
+        total_columns = 1 + (len(sorted_aircraft_types) * 3)
+        ttk.Separator(scrollable_frame, orient='horizontal').grid(row=2, column=0, columnspan=total_columns, sticky="ew", pady=2)
+        
+        # Add "Select All" row for master controls
+        select_all_label = tk.Label(scrollable_frame, text="Select All →", 
+                 font=("Segoe UI", 8, "italic"), 
+                 bg=self.colors['card_bg'],
+                 fg=self.colors['secondary_text'],
+                 anchor="e")
+        select_all_label.grid(row=3, column=0, sticky="e", padx=5, pady=2)
+        
+        # Add master controls for each aircraft type
+        col_idx = 1
+        for aircraft_type in sorted_aircraft_types:
+            # Skip template column (no master control needed)
+            col_idx += 1
+            
+            # Master unlimited checkbox
+            def create_unlimited_master_callback(aircraft_type_ref):
+                def toggle_unlimited():
+                    master_value = self.master_unlimited_vars[aircraft_type_ref].get()
+                    for airport_id in airports_with_dynspawn:
+                        if airport_id in self.airbase_unlimited_vars and aircraft_type_ref in self.airbase_unlimited_vars[airport_id]:
+                            self.airbase_unlimited_vars[airport_id][aircraft_type_ref].set(master_value)
+                return toggle_unlimited
+            
+            master_unlimited_cb = ttk.Checkbutton(scrollable_frame, 
+                                                 variable=self.master_unlimited_vars[aircraft_type],
+                                                 command=create_unlimited_master_callback(aircraft_type),
+                                                 style='Modern.TCheckbutton')
+            master_unlimited_cb.grid(row=3, column=col_idx, padx=2, pady=2)
+            col_idx += 1
+            
+            # Master amount entry
+            def create_amount_master_callback(aircraft_type_ref):
+                def update_amounts(*args):
+                    master_value = self.master_amount_vars[aircraft_type_ref].get()
+                    if master_value.strip():  # Only update if not empty
+                        for airport_id in airports_with_dynspawn:
+                            if airport_id in self.airbase_initial_amount_vars and aircraft_type_ref in self.airbase_initial_amount_vars[airport_id]:
+                                self.airbase_initial_amount_vars[airport_id][aircraft_type_ref].set(master_value)
+                return update_amounts
+            
+            # Add trace to master amount var to auto-update all fields
+            self.master_amount_vars[aircraft_type].trace('w', create_amount_master_callback(aircraft_type))
+            
+            vcmd_master = (scrollable_frame.register(lambda char: char.isdigit() or char == ""), '%S')
+            master_amount_entry = ttk.Entry(scrollable_frame,
+                                          textvariable=self.master_amount_vars[aircraft_type],
+                                          width=6,
+                                          font=("Segoe UI", 9),
+                                          validate='key',
+                                          validatecommand=vcmd_master)
+            master_amount_entry.grid(row=3, column=col_idx, padx=2, pady=2)
+            col_idx += 1
+        
+        # Add another separator after master controls
+        ttk.Separator(scrollable_frame, orient='horizontal').grid(row=4, column=0, columnspan=total_columns, sticky="ew", pady=2)
         
         # Create a row for each airbase
         for row_idx, airport_id in enumerate(airports_with_dynspawn):
@@ -646,13 +913,16 @@ class MergedDynamicTemplateManager:
                      bg=self.colors['card_bg'],
                      width=32,  # Fixed width for consistent alignment
                      anchor="w")
-            name_label.grid(row=row_idx+2, column=0, sticky="w", padx=5, pady=2)
+            name_label.grid(row=row_idx+5, column=0, sticky="w", padx=5, pady=2)
             
-            # Add dropdown for each aircraft type
-            for col_idx, aircraft_type in enumerate(sorted_aircraft_types):
-                var = self.airbase_template_vars[airport_id][aircraft_type]
+            # Add controls for each aircraft type (Template dropdown, Unlimited checkbox, Initial Amount entry)
+            col_idx = 1
+            for aircraft_type in sorted_aircraft_types:
+                template_var = self.airbase_template_vars[airport_id][aircraft_type]
+                unlimited_var = self.airbase_unlimited_vars[airport_id][aircraft_type]
+                amount_var = self.airbase_initial_amount_vars[airport_id][aircraft_type]
                 
-                # Build dropdown choices: template names + "None"
+                # Template dropdown
                 templates_list = templates_by_type[aircraft_type]
                 choices = ["None (Disabled)"]
                 for template in templates_list:
@@ -674,11 +944,12 @@ class MergedDynamicTemplateManager:
                 
                 dropdown = ttk.Combobox(scrollable_frame,
                                        values=choices,
-                                       width=18,
-                                       state="readonly")
+                                       width=16,
+                                       state="readonly",
+                                       style='Modern.TCombobox')
                 
                 # Set initial display value (show template name, not ID)
-                current_id = var.get()
+                current_id = template_var.get()
                 if current_id == "None":
                     dropdown.set("None (Disabled)")
                 else:
@@ -687,8 +958,32 @@ class MergedDynamicTemplateManager:
                             dropdown.set(f"{template['name']} (ID:{template['groupId']})")
                             break
                 
-                dropdown.bind("<<ComboboxSelected>>", create_dropdown_callback(var))
-                dropdown.grid(row=row_idx+2, column=col_idx+1, sticky="w", padx=3, pady=2)
+                dropdown.bind("<<ComboboxSelected>>", create_dropdown_callback(template_var))
+                dropdown.grid(row=row_idx+5, column=col_idx, sticky="w", padx=2, pady=2)
+                
+                # Unlimited checkbox
+                unlimited_cb = ttk.Checkbutton(scrollable_frame, 
+                                             variable=unlimited_var,
+                                             style='Modern.TCheckbutton')
+                unlimited_cb.grid(row=row_idx+5, column=col_idx+1, padx=2, pady=2)
+                
+                # Initial Amount entry with validation
+                def create_validate_number(var_ref):
+                    def validate_input(char):
+                        # Allow only digits and empty string
+                        return char.isdigit() or char == ""
+                    return validate_input
+                
+                vcmd = (scrollable_frame.register(create_validate_number(amount_var)), '%S')
+                amount_entry = ttk.Entry(scrollable_frame,
+                                       textvariable=amount_var,
+                                       width=6,
+                                       font=("Segoe UI", 9),
+                                       validate='key',
+                                       validatecommand=vcmd)
+                amount_entry.grid(row=row_idx+5, column=col_idx+2, padx=2, pady=2)
+                
+                col_idx += 3
         
         # Add summary at bottom
         summary_frame = tk.Frame(self.template_frame, bg=self.colors['card_bg'])
@@ -1016,9 +1311,28 @@ class MergedDynamicTemplateManager:
                         selected_airports.append(airport_id)
             
             if selected_airports:
+                # Collect unlimited and initial amount data for each airport
+                airport_options = {}
+                for airport_id in selected_airports:
+                    unlimited_val = self.airbase_unlimited_vars[airport_id][aircraft_type].get()
+                    amount_val = self.airbase_initial_amount_vars[airport_id][aircraft_type].get()
+                    
+                    # Validate amount is a number
+                    try:
+                        amount_int = int(amount_val) if amount_val.strip() else 100
+                    except ValueError:
+                        amount_int = 100  # Default fallback
+                    
+                    airport_options[airport_id] = {
+                        "unlimited": unlimited_val,
+                        "initialAmount": amount_int
+                    }
+                    print(f"  DEBUG: Collected options for airport {airport_id}, aircraft {aircraft_type}: unlimited={unlimited_val}, amount={amount_int}")
+                
                 template_airport_mapping[group_id] = {
                     "template": template,
-                    "airports": selected_airports
+                    "airports": selected_airports,
+                    "airport_options": airport_options
                 }
             else:
                 print(f"  Template '{template['name']}' (ID:{group_id}) -> DISABLED (not linked to any airbase)")
@@ -1028,6 +1342,9 @@ class MergedDynamicTemplateManager:
             tpl = mapping["template"]
             airports = mapping["airports"]
             print(f"  Template '{tpl['name']}' (ID:{group_id}, Type:{tpl['type']}) -> Airports: {airports}")
+            if "airport_options" in mapping:
+                for airport_id, options in mapping["airport_options"].items():
+                    print(f"    Airport {airport_id}: unlimited={options['unlimited']}, initialAmount={options['initialAmount']}")
         
         if not template_airport_mapping:
             messagebox.showwarning("Warning", 
@@ -1040,6 +1357,11 @@ class MergedDynamicTemplateManager:
             self.status_label.config(text="Linking templates to airbases...")
             self.root.update()
             self.update_warehouse_templates_with_mapping(template_airport_mapping)
+            
+            # Also update unlimited and initialAmount for ALL aircraft types with user-specified options
+            self.status_label.config(text="Updating aircraft inventory options...")
+            self.root.update()
+            self.update_aircraft_inventory_options()
             
             # Repack the final .miz file
             self.status_label.config(text="Creating final .miz file...")
@@ -1212,7 +1534,13 @@ class MergedDynamicTemplateManager:
                 {
                     groupId: {
                         "template": {groupId, type, name},
-                        "airports": [airport_id1, airport_id2, ...]
+                        "airports": [airport_id1, airport_id2, ...],
+                        "airport_options": {
+                            airport_id: {
+                                "unlimited": bool,
+                                "initialAmount": int
+                            }
+                        }
                     }
                 }
         """
@@ -1268,6 +1596,7 @@ class MergedDynamicTemplateManager:
                     aircraft_pattern = f'\\["{re.escape(tpl["type"])}"\\]\\s*='
                     if re.search(aircraft_pattern, line) and '-- end of' not in line:
                         print(f"  DEBUG: Found aircraft type '{tpl['type']}' at line {i}: {line.strip()}")
+                        print(f"  DEBUG: Will update with options: unlimited={mapping['airport_options'][current_airport_id]['unlimited']}, initialAmount={mapping['airport_options'][current_airport_id]['initialAmount']}")
                         # Iterate forward to find or add the linkDynTempl line
                         j = i + 1
                         found_link = False
@@ -1279,6 +1608,44 @@ class MergedDynamicTemplateManager:
                                 # Update existing linkDynTempl
                                 indentation = warehouse_lines[j][:len(warehouse_lines[j]) - len(warehouse_lines[j].lstrip())]
                                 warehouse_lines[j] = f'{indentation}["linkDynTempl"] = {tpl["groupId"]},\n'
+                                
+                                # Update unlimited and initialAmount if they exist in the mapping
+                                if "airport_options" in mapping and current_airport_id in mapping["airport_options"]:
+                                    options = mapping["airport_options"][current_airport_id]
+                                    print(f"    DEBUG: Looking for unlimited/initialAmount fields for {tpl['type']} at airport {current_airport_id}")
+                                    
+                                    # Look for unlimited and initialAmount in the next few lines
+                                    found_unlimited = False
+                                    found_initial_amount = False
+                                    
+                                    for k in range(j+1, min(j+15, len(warehouse_lines))):
+                                        line_k = warehouse_lines[k].strip()
+                                        print(f"      DEBUG: Line {k}: {line_k[:50]}...")
+                                        
+                                        if '["unlimited"]' in warehouse_lines[k] and '=' in warehouse_lines[k]:
+                                            unlimited_val = "true" if options["unlimited"] else "false"
+                                            old_val = line_k.split('=')[1].strip().rstrip(',') if '=' in line_k else "unknown"
+                                            indentation_k = warehouse_lines[k][:len(warehouse_lines[k]) - len(warehouse_lines[k].lstrip())]
+                                            warehouse_lines[k] = f'{indentation_k}["unlimited"] = {unlimited_val},\n'
+                                            print(f"    DEBUG: Updated unlimited at line {k}: {old_val} → {unlimited_val}")
+                                            found_unlimited = True
+                                            
+                                        elif '["initialAmount"]' in warehouse_lines[k] and '=' in warehouse_lines[k]:
+                                            old_val = line_k.split('=')[1].strip().rstrip(',') if '=' in line_k else "unknown"
+                                            indentation_k = warehouse_lines[k][:len(warehouse_lines[k]) - len(warehouse_lines[k].lstrip())]
+                                            warehouse_lines[k] = f'{indentation_k}["initialAmount"] = {options["initialAmount"]},\n'
+                                            print(f"    DEBUG: Updated initialAmount at line {k}: {old_val} → {options['initialAmount']}")
+                                            found_initial_amount = True
+                                            
+                                        elif f'-- end of ["{tpl["type"]}"]' in warehouse_lines[k]:
+                                            print(f"    DEBUG: Reached end of {tpl['type']} section at line {k}")
+                                            break
+                                    
+                                    if not found_unlimited:
+                                        print(f"    WARNING: unlimited field not found for {tpl['type']}")
+                                    if not found_initial_amount:
+                                        print(f"    WARNING: initialAmount field not found for {tpl['type']}")
+                                
                                 found_link = True
                                 updates_made += 1
                                 print(f"    DEBUG: Updated linkDynTempl at line {j}: {old_value} → {tpl['groupId']}")
@@ -1290,6 +1657,16 @@ class MergedDynamicTemplateManager:
                                 insert_line = j - 1
                                 indentation = warehouse_lines[insert_line][:len(warehouse_lines[insert_line]) - len(warehouse_lines[insert_line].lstrip())]
                                 warehouse_lines.insert(insert_line, f'{indentation}["linkDynTempl"] = {tpl["groupId"]},\n')
+                                
+                                # Also insert unlimited and initialAmount if specified
+                                if "airport_options" in mapping and current_airport_id in mapping["airport_options"]:
+                                    options = mapping["airport_options"][current_airport_id]
+                                    unlimited_val = "true" if options["unlimited"] else "false"
+                                    # Insert in reverse order to maintain correct line numbers
+                                    warehouse_lines.insert(insert_line+1, f'{indentation}["initialAmount"] = {options["initialAmount"]},\n')
+                                    warehouse_lines.insert(insert_line+1, f'{indentation}["unlimited"] = {unlimited_val},\n')
+                                    print(f"    DEBUG: Inserted unlimited = {unlimited_val}, initialAmount = {options['initialAmount']}")
+                                
                                 found_link = True
                                 updates_made += 1
                                 print(f"    DEBUG: Inserted linkDynTempl at line {insert_line} = {tpl['groupId']}")
@@ -1311,6 +1688,96 @@ class MergedDynamicTemplateManager:
             f.writelines(warehouse_lines)
         
         print(f"DEBUG: Updated {updates_made} template links across all airbases")
+    
+    def update_aircraft_inventory_options(self):
+        """Update unlimited and initialAmount for all aircraft types with user-specified options"""
+        print(f"\nDEBUG: Starting aircraft inventory options update")
+        
+        with open(self.warehouses_file, encoding="utf-8") as f:
+            warehouse_lines = f.readlines()
+
+        # Build a comprehensive mapping of all user options for all airbases and aircraft types
+        all_options = {}
+        for airport_id in self.airbase_unlimited_vars:
+            all_options[airport_id] = {}
+            for aircraft_type in self.airbase_unlimited_vars[airport_id]:
+                unlimited_val = self.airbase_unlimited_vars[airport_id][aircraft_type].get()
+                amount_val = self.airbase_initial_amount_vars[airport_id][aircraft_type].get()
+                
+                try:
+                    amount_int = int(amount_val) if amount_val.strip() else 100
+                except ValueError:
+                    amount_int = 100
+                
+                all_options[airport_id][aircraft_type] = {
+                    "unlimited": unlimited_val,
+                    "initialAmount": amount_int
+                }
+                print(f"  DEBUG: Airport {airport_id}, Aircraft {aircraft_type}: unlimited={unlimited_val}, amount={amount_int}")
+
+        i = 0
+        current_airport_id = None
+        updates_made = 0
+
+        while i < len(warehouse_lines):
+            line = warehouse_lines[i]
+            
+            # Detect airport entry
+            airport_id_match = re.search(r'^\s{0,20}\[(\d+)\]\s*=\s*$', line)
+            if airport_id_match:
+                current_airport_id = int(airport_id_match.group(1))
+            
+            # Process if this airport has user options
+            if current_airport_id and current_airport_id in all_options:
+                # Look for aircraft types that have user options
+                for aircraft_type, options in all_options[current_airport_id].items():
+                    aircraft_pattern = f'\\["{re.escape(aircraft_type)}"\\]\\s*='
+                    if re.search(aircraft_pattern, line) and '-- end of' not in line:
+                        print(f"  DEBUG: Found {aircraft_type} at airport {current_airport_id}, line {i}")
+                        
+                        # Look for unlimited and initialAmount in the next lines
+                        for j in range(i+1, min(i+15, len(warehouse_lines))):
+                            if '["unlimited"]' in warehouse_lines[j] and '=' in warehouse_lines[j]:
+                                unlimited_val = "true" if options["unlimited"] else "false"
+                                old_val = warehouse_lines[j].split('=')[1].strip().rstrip(',') if '=' in warehouse_lines[j] else "unknown"
+                                indentation = warehouse_lines[j][:len(warehouse_lines[j]) - len(warehouse_lines[j].lstrip())]
+                                warehouse_lines[j] = f'{indentation}["unlimited"] = {unlimited_val},\n'
+                                print(f"    DEBUG: Updated unlimited: {old_val} → {unlimited_val}")
+                                updates_made += 1
+                                
+                            elif '["initialAmount"]' in warehouse_lines[j] and '=' in warehouse_lines[j]:
+                                old_val = warehouse_lines[j].split('=')[1].strip().rstrip(',') if '=' in warehouse_lines[j] else "unknown"
+                                indentation = warehouse_lines[j][:len(warehouse_lines[j]) - len(warehouse_lines[j].lstrip())]
+                                warehouse_lines[j] = f'{indentation}["initialAmount"] = {options["initialAmount"]},\n'
+                                print(f"    DEBUG: Updated initialAmount: {old_val} → {options['initialAmount']}")
+                                updates_made += 1
+                                
+                            elif f'-- end of ["{aircraft_type}"]' in warehouse_lines[j]:
+                                break
+            
+            i += 1
+
+        # Write the modified content back
+        with open(self.warehouses_file, "w", encoding="utf-8") as f:
+            f.writelines(warehouse_lines)
+        
+        print(f"DEBUG: Updated {updates_made} aircraft inventory options across all airbases")
+    
+    def open_github(self):
+        """Open GitHub repository in web browser"""
+        github_url = "https://github.com/sevenfifty777/DCS-Dynamic-Template-Manager"
+        try:
+            webbrowser.open(github_url)
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not open GitHub link:\n{str(e)}")
+    
+    def open_discord(self):
+        """Open Discord contact information"""
+        messagebox.showinfo("Discord Contact", 
+                           "You can reach me on Discord:\n\n"
+                           "Username: vf142noeztiti\n\n"
+                           "Feel free to send me a friend request or message!\n"
+                           "I'm happy to help with questions or feedback.")
     
     def update_warehouse_dynspawn_options(self, selected_airports):
         """Update warehouse file with DynSpawn options for selected airports

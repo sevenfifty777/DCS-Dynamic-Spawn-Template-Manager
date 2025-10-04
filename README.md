@@ -8,7 +8,7 @@
 ### Aircraft Group Naming Requirements
 
 1. **Open your mission** in DCS Mission Editor
-2. **Create aircraft groups** with skill set to **"Player"** and check **"DynamicTemplate"** option
+2. **Create aircraft groups** with skill set to **"Player"** and check **"Dyn.SPAWN Template"** option
 3. **Rename these groups** to end with `_DynTemp`
    - ✅ Good examples: 
      - `F-16C_Squadron_DynTemp`
@@ -101,10 +101,15 @@ Now you'll choose which aircraft types can will be used as a Dynamic Template at
 
 1. The program will reload and show available aircraft templates
 2. **For each airbase and aircraft type**:
-   - Use the dropdown menus to select which template to use
-   - Choose "None (Disabled)" if you don't want that aircraft type at that airbase
+   - **Template dropdown**: Select which template to use (or "None (Disabled)" to skip)
+   - **∞ checkbox**: Check for unlimited aircraft spawning
+   - **Amount field**: Enter the initial number of aircraft (e.g., 50, 100, 200)
 
-3. **Click "Apply Templates & Save Final"**
+3. **Use "Select All" row** (optional):
+   - **∞ master checkbox**: Check/uncheck unlimited for all airbases of that aircraft type
+   - **Amount master field**: Enter a number to set the same amount for all airbases of that aircraft type
+
+4. **Click "Apply Templates & Save Final"**
    - This creates your final mission: `[YourMission]_Final.miz`
 
 ### **Notes:** If you stop the process before generationg the final mission, clean all temp folders and files created if any
@@ -121,6 +126,16 @@ Now you'll choose which aircraft types can will be used as a Dynamic Template at
 - **🔵 BLUE**: NATO/Allied forces
 - **🔴 RED**: OPFOR/Enemy forces  
 - **⚪ NEUTRAL**: Civilian or neutral forces
+
+### Template Options Explained
+
+| Option | What it does |
+|--------|-------------|
+| **Template** | Which aircraft group to use as a spawn template |
+| **∞ (Unlimited)** | If checked: Aircraft keep spawning indefinitely. If unchecked: Limited to initial amount |
+| **Amount** | How many aircraft are initially available at this airbase (e.g., 50, 100, 200) |
+| **Select All ∞** | Master checkbox to set unlimited on/off for all airbases of this aircraft type |
+| **Select All Amount** | Master field to set the same initial amount for all airbases of this aircraft type |
 
 ### DynSpawn Options Explained
 
