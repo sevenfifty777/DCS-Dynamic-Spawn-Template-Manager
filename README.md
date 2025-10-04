@@ -61,6 +61,8 @@ This repository includes pre-generated airbase CSV files for the following DCS m
 
 **You can use these CSV files directly** - no need to generate them yourself! Simply select the appropriate CSV file for your map when using the tool.
 
+📖 **[View complete airbase list with IDs for all maps](Airbases%20List%20Files/airbaseList.md)**
+
 ## � How to Generate the Airbase CSV File (For Other Maps) or after Maps updates or if you need to add SHIP/FARP into the list
 
 If you need a CSV file for a map not listed above, you can generate it yourself:
