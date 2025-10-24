@@ -1,4 +1,4 @@
-            ["aircrafts"] = 
+["aircrafts"] = 
 			{
 				["helicopters"] = 
 				{
@@ -369,7 +369,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["B-17G"]
-					["F4U-1D_CW"] = 
+					["MiG-19P"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -378,10 +378,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 340,
+							[4] = 287,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F4U-1D_CW"]
+					}, -- end of ["MiG-19P"]
 					["I-16"] = 
 					{
 						["initialAmount"] = 100,
@@ -486,7 +486,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["F-15ESE"]
-					["P-47D-40"] = 
+					["Su-30"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -495,10 +495,23 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 262,
+							[4] = 13,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["P-47D-40"]
+					}, -- end of ["Su-30"]
+					["QF-4E"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 1,
+							[4] = 344,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["QF-4E"]
 					["Mirage-F1CR"] = 
 					{
 						["initialAmount"] = 100,
@@ -538,7 +551,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Tu-142"]
-					["F-15E"] = 
+					["M-2000C"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -547,10 +560,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 59,
+							[4] = 284,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-15E"]
+					}, -- end of ["M-2000C"]
 					["B-52H"] = 
 					{
 						["initialAmount"] = 100,
@@ -577,7 +590,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["F-117A"]
-					["P-47D-30bl1"] = 
+					["AJS37"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -586,10 +599,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 261,
+							[4] = 265,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["P-47D-30bl1"]
+					}, -- end of ["AJS37"]
 					["Tornado IDS"] = 
 					{
 						["initialAmount"] = 100,
@@ -616,7 +629,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["IL-78M"]
-					["A-20G"] = 
+					["MiG-15bis"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -624,11 +637,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 4,
-							[4] = 263,
+							[3] = 1,
+							[4] = 286,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["A-20G"]
+					}, -- end of ["MiG-15bis"]
 					["MiG-25RBT"] = 
 					{
 						["initialAmount"] = 100,
@@ -668,7 +681,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["MB-339A"]
-					["RQ-1A Predator"] = 
+					["Bf-109K-4"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -676,11 +689,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 6,
-							[4] = 55,
+							[3] = 1,
+							[4] = 257,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["RQ-1A Predator"]
+					}, -- end of ["Bf-109K-4"]
 					["KC-135"] = 
 					{
 						["initialAmount"] = 100,
@@ -746,7 +759,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["F-15C"]
-					["Tornado GR4"] = 
+					["F-16A MLU"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -755,10 +768,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 10,
+							[4] = 52,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Tornado GR4"]
+					}, -- end of ["F-16A MLU"]
 					["Mirage-F1BD"] = 
 					{
 						["initialAmount"] = 100,
@@ -785,7 +798,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1M-EE"]
-					["Christen Eagle II"] = 
+					["An-30M"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -793,11 +806,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 274,
+							[3] = 5,
+							[4] = 40,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Christen Eagle II"]
+					}, -- end of ["An-30M"]
 					["MQ-9 Reaper"] = 
 					{
 						["initialAmount"] = 100,
@@ -811,7 +824,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["MQ-9 Reaper"]
-					["F-5E-3_FC"] = 
+					["Hawk"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -820,10 +833,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 331,
+							[4] = 281,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-5E-3_FC"]
+					}, -- end of ["Hawk"]
 					["Mirage-F1EQ"] = 
 					{
 						["initialAmount"] = 100,
@@ -1071,7 +1084,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["MiG-21Bis"]
-					["MiG-29S"] = 
+					["F-5E-3"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1080,10 +1093,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 50,
+							[4] = 276,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-29S"]
+					}, -- end of ["F-5E-3"]
 					["Su-33"] = 
 					{
 						["initialAmount"] = 100,
@@ -1123,7 +1136,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["An-26B"]
-					["Hercules"] = 
+					["F-14A-135-GR-Early"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1131,11 +1144,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 5,
-							[4] = 346,
+							[3] = 1,
+							[4] = 345,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Hercules"]
+					}, -- end of ["F-14A-135-GR-Early"]
 					["Su-25"] = 
 					{
 						["initialAmount"] = 100,
@@ -1253,6 +1266,19 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1EDA"]
+					["Hercules"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 5,
+							[4] = 346,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["Hercules"]
 					["WingLoong-I"] = 
 					{
 						["initialAmount"] = 100,
@@ -1266,7 +1292,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["WingLoong-I"]
-					["MiG-31"] = 
+					["Mirage-F1AZ"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1274,12 +1300,12 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 3,
-							[4] = 9,
+							[3] = 1,
+							[4] = 335,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-31"]
-					["An-30M"] = 
+					}, -- end of ["Mirage-F1AZ"]
+					["Christen Eagle II"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1287,11 +1313,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 5,
-							[4] = 40,
+							[3] = 1,
+							[4] = 274,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["An-30M"]
+					}, -- end of ["Christen Eagle II"]
 					["S-3B Tanker"] = 
 					{
 						["initialAmount"] = 100,
@@ -1331,7 +1357,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["JF-17"]
-					["Mirage-F1CT"] = 
+					["MiG-25PD"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1339,24 +1365,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 318,
+							[3] = 3,
+							[4] = 24,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Mirage-F1CT"]
-					["Mirage-F1DDA"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 1,
-							[4] = 323,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["Mirage-F1DDA"]
+					}, -- end of ["MiG-25PD"]
 					["Mirage-F1CZ"] = 
 					{
 						["initialAmount"] = 100,
@@ -1370,7 +1383,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1CZ"]
-					["Bf-109K-4"] = 
+					["TF-51D"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1379,11 +1392,24 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 257,
+							[4] = 65,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Bf-109K-4"]
-					["F-5E"] = 
+					}, -- end of ["TF-51D"]
+					["A-20G"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 4,
+							[4] = 263,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["A-20G"]
+					["Tornado GR4"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1392,11 +1418,11 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 46,
+							[4] = 10,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-5E"]
-					["Su-24M"] = 
+					}, -- end of ["Tornado GR4"]
+					["Mirage-F1EH"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1405,10 +1431,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 12,
+							[4] = 307,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Su-24M"]
+					}, -- end of ["Mirage-F1EH"]
 					["Yak-52"] = 
 					{
 						["initialAmount"] = 100,
@@ -1435,6 +1461,32 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Su-25TM"]
+					["Mirage-F1DDA"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 1,
+							[4] = 323,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["Mirage-F1DDA"]
+					["Tu-95MS"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 2,
+							[4] = 342,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["Tu-95MS"]
 					["FA-18C_hornet"] = 
 					{
 						["initialAmount"] = 100,
@@ -1461,32 +1513,6 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1CJ"]
-					["Tu-95MS"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 2,
-							[4] = 342,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["Tu-95MS"]
-					["TF-51D"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 1,
-							[4] = 65,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["TF-51D"]
 					["FW-190A8"] = 
 					{
 						["initialAmount"] = 100,
@@ -1513,7 +1539,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1CK"]
-					["E-3A"] = 
+					["F-16C bl.52d"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1521,11 +1547,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 5,
-							[4] = 27,
+							[3] = 1,
+							[4] = 7,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["E-3A"]
+					}, -- end of ["F-16C bl.52d"]
 					["P-47D-30"] = 
 					{
 						["initialAmount"] = 100,
@@ -1539,7 +1565,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["P-47D-30"]
-					["MiG-27K"] = 
+					["Mirage-F1CT"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1548,10 +1574,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 11,
+							[4] = 318,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-27K"]
+					}, -- end of ["Mirage-F1CT"]
 					["A-10C"] = 
 					{
 						["initialAmount"] = 100,
@@ -1565,7 +1591,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["A-10C"]
-					["A-10A"] = 
+					["MiG-31"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1573,12 +1599,12 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 6,
-							[4] = 17,
+							[3] = 3,
+							[4] = 9,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["A-10A"]
-					["MiG-15bis"] = 
+					}, -- end of ["MiG-31"]
+					["E-3A"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1586,11 +1612,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 286,
+							[3] = 5,
+							[4] = 27,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-15bis"]
+					}, -- end of ["E-3A"]
 					["P-51D"] = 
 					{
 						["initialAmount"] = 100,
@@ -1604,7 +1630,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["P-51D"]
-					["Mirage-F1B"] = 
+					["F-5E-3_FC"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1613,10 +1639,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 319,
+							[4] = 331,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Mirage-F1B"]
+					}, -- end of ["F-5E-3_FC"]
 					["F4U-1D"] = 
 					{
 						["initialAmount"] = 100,
@@ -1643,7 +1669,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1CH"]
-					["F-16C bl.52d"] = 
+					["Su-24M"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1652,11 +1678,11 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 7,
+							[4] = 12,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-16C bl.52d"]
-					["Hawk"] = 
+					}, -- end of ["Su-24M"]
+					["Mirage-F1B"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1665,10 +1691,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 281,
+							[4] = 319,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Hawk"]
+					}, -- end of ["Mirage-F1B"]
 					["F-14B"] = 
 					{
 						["initialAmount"] = 100,
@@ -1721,7 +1747,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["C-130"]
-					["AJS37"] = 
+					["Mirage-F1BE"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1730,10 +1756,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 265,
+							[4] = 320,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["AJS37"]
+					}, -- end of ["Mirage-F1BE"]
 					["Mirage-F1JA"] = 
 					{
 						["initialAmount"] = 100,
@@ -1760,7 +1786,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["J-11A"]
-					["MiG-25PD"] = 
+					["F4U-1D_CW"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1768,11 +1794,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 3,
-							[4] = 24,
+							[3] = 1,
+							[4] = 340,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-25PD"]
+					}, -- end of ["F4U-1D_CW"]
 					["F-14A"] = 
 					{
 						["initialAmount"] = 100,
@@ -1825,20 +1851,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["B-1B"]
-					["L-39C"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 6,
-							[4] = 283,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["L-39C"]
-					["Mirage-F1EH"] = 
+					["MiG-29S"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1847,23 +1860,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 307,
+							[4] = 50,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Mirage-F1EH"]
-					["C-47"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 5,
-							[4] = 299,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["C-47"]
+					}, -- end of ["MiG-29S"]
 					["Mirage-F1C-200"] = 
 					{
 						["initialAmount"] = 100,
@@ -1877,7 +1877,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1C-200"]
-					["MiG-19P"] = 
+					["C-47"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1885,12 +1885,12 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 287,
+							[3] = 5,
+							[4] = 299,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-19P"]
-					["Su-30"] = 
+					}, -- end of ["C-47"]
+					["MosquitoFBMkVI"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1898,11 +1898,37 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 13,
+							[3] = 6,
+							[4] = 297,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Su-30"]
+					}, -- end of ["MosquitoFBMkVI"]
+					["L-39C"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 6,
+							[4] = 283,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["L-39C"]
+					["RQ-1A Predator"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 6,
+							[4] = 55,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["RQ-1A Predator"]
 					["Yak-40"] = 
 					{
 						["initialAmount"] = 100,
@@ -1929,7 +1955,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["P-51D-30-NA"]
-					["F-5E-3"] = 
+					["F-5E"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -1938,10 +1964,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 276,
+							[4] = 46,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-5E-3"]
+					}, -- end of ["F-5E"]
 					["MiG-29G"] = 
 					{
 						["initialAmount"] = 100,
@@ -1968,32 +1994,6 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Mirage-F1EE"]
-					["Mirage-F1AZ"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 1,
-							[4] = 335,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["Mirage-F1AZ"]
-					["MosquitoFBMkVI"] = 
-					{
-						["initialAmount"] = 100,
-						["linkDynTempl"] = 0,
-						["wsType"] = 
-						{
-							[1] = 1,
-							[2] = 1,
-							[3] = 6,
-							[4] = 297,
-						}, -- end of ["wsType"]
-						["unlimited"] = false,
-					}, -- end of ["MosquitoFBMkVI"]
 					["F/A-18C"] = 
 					{
 						["initialAmount"] = 100,
@@ -2007,6 +2007,32 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["F/A-18C"]
+					["P-47D-30bl1"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 1,
+							[4] = 261,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["P-47D-30bl1"]
+					["F-15E"] = 
+					{
+						["initialAmount"] = 100,
+						["linkDynTempl"] = 0,
+						["wsType"] = 
+						{
+							[1] = 1,
+							[2] = 1,
+							[3] = 1,
+							[4] = 59,
+						}, -- end of ["wsType"]
+						["unlimited"] = false,
+					}, -- end of ["F-15E"]
 					["C-101CC"] = 
 					{
 						["initialAmount"] = 100,
@@ -2020,7 +2046,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["C-101CC"]
-					["M-2000C"] = 
+					["P-47D-40"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -2029,11 +2055,11 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 284,
+							[4] = 262,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["M-2000C"]
-					["Mirage-F1BE"] = 
+					}, -- end of ["P-47D-40"]
+					["MiG-15bis_FC"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -2042,10 +2068,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 320,
+							[4] = 333,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["Mirage-F1BE"]
+					}, -- end of ["MiG-15bis_FC"]
 					["A-50"] = 
 					{
 						["initialAmount"] = 100,
@@ -2085,7 +2111,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["IL-76MD"]
-					["MiG-15bis_FC"] = 
+					["MiG-27K"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -2094,10 +2120,10 @@
 							[1] = 1,
 							[2] = 1,
 							[3] = 1,
-							[4] = 333,
+							[4] = 11,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["MiG-15bis_FC"]
+					}, -- end of ["MiG-27K"]
 					["Su-34"] = 
 					{
 						["initialAmount"] = 100,
@@ -2111,7 +2137,7 @@
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
 					}, -- end of ["Su-34"]
-					["F-16A MLU"] = 
+					["A-10A"] = 
 					{
 						["initialAmount"] = 100,
 						["linkDynTempl"] = 0,
@@ -2119,11 +2145,11 @@
 						{
 							[1] = 1,
 							[2] = 1,
-							[3] = 1,
-							[4] = 52,
+							[3] = 6,
+							[4] = 17,
 						}, -- end of ["wsType"]
 						["unlimited"] = false,
-					}, -- end of ["F-16A MLU"]
+					}, -- end of ["A-10A"]
 					["Ju-88A4"] = 
 					{
 						["initialAmount"] = 100,

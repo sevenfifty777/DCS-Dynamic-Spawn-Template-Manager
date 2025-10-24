@@ -470,9 +470,10 @@ This document lists all airbases available in each DCS map.
 
 ## Normandy
 
-**Airdromes (82):**
+**Airdromes (90):**
 
 - **Abbeville Drucat** (ID: 75)
+- **Alderney** (ID: 85)
 - **Amiens-Glisy** (ID: 59)
 - **Argentan** (ID: 32)
 - **Avranches Le Val-Saint-Pere** (ID: 65)
@@ -481,6 +482,7 @@ This document lists all airbases available in each DCS map.
 - **Bazenville** (ID: 20)
 - **Beaumont-le-Roger** (ID: 67)
 - **Beauvais-Tille** (ID: 44)
+- **Bembridg** (ID: 90)
 - **Beny-sur-Mer** (ID: 22)
 - **Bernay Saint Martin** (ID: 69)
 - **Beuzeville** (ID: 14)
@@ -514,14 +516,18 @@ This document lists all airbases available in each DCS map.
 - **Funtington** (ID: 29)
 - **Goulet** (ID: 33)
 - **Gravesend** (ID: 66)
+- **Guernsey** (ID: 83)
 - **Guyancourt** (ID: 47)
 - **Hauterive** (ID: 36)
 - **Hawkinge** (ID: 82)
-- **Headcorn** (ID: 80)
+- **Headcorn** (ID: 86)
 - **Heathrow** (ID: 50)
 - **High Halden** (ID: 78)
+- **Holmsley South** (ID: 89)
+- **Jersey** (ID: 84)
 - **Kenley** (ID: 43)
 - **Lantheuil** (ID: 25)
+- **Lashenden** (ID: 80)
 - **Le Molay** (ID: 17)
 - **Lessay** (ID: 8)
 - **Lignerolles** (ID: 2)
@@ -534,6 +540,7 @@ This document lists all airbases available in each DCS map.
 - **Meautis** (ID: 6)
 - **Merville Calonne** (ID: 77)
 - **Needs Oar Point** (ID: 28)
+- **Northolt** (ID: 88)
 - **Odiham** (ID: 39)
 - **Orly** (ID: 57)
 - **Picauville** (ID: 16)
@@ -545,6 +552,7 @@ This document lists all airbases available in each DCS map.
 - **Saint-Andre-de-lEure** (ID: 70)
 - **Saint-Aubin** (ID: 63)
 - **Saint-Omer Wizernes** (ID: 76)
+- **Saint-Pol-Bryas** (ID: 87)
 - **Sainte-Croix-sur-Mer** (ID: 21)
 - **Sainte-Laurent-sur-Mer** (ID: 9)
 - **Sommervieu** (ID: 24)
@@ -555,7 +563,7 @@ This document lists all airbases available in each DCS map.
 - **Vrigny** (ID: 38)
 - **West Malling** (ID: 41)
 
-**Total: 82 locations**
+**Total: 90 locations**
 
 ---
 
